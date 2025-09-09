@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { UrlCaptureBar } from "@/components/url-capture/UrlCaptureBar";
 
 const UnlockPotentialSection = () => {
   return (
@@ -30,6 +31,11 @@ const UnlockPotentialSection = () => {
             Your growth doesn't wait. Neither should you.
           </motion.p>
 
+          {/* URL Capture Bar - Bottom CTA placement */}
+          <div className="mb-8">
+            <UrlCaptureBar variant="cta" />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,6 +44,7 @@ const UnlockPotentialSection = () => {
           >
             <Link
               href="#contact"
+              data-action="open-url-capture"
               className="bg-primary text-primary-foreground font-body font-medium py-4 px-8 flex items-center gap-2.5 hover:opacity-80 transition-opacity duration-300 mx-auto w-fit"
             >
               Try Now

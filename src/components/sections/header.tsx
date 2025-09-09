@@ -32,6 +32,7 @@ const Header = () => {
         {/* CTA Button */}
         <Link
           href="#contact"
+          data-action="open-url-capture"
           className="bg-primary text-primary-foreground font-medium py-2 px-6 flex items-center gap-2 hover:opacity-80 transition-opacity whitespace-nowrap"
         >
           Try Now

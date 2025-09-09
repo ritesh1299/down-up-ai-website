@@ -57,6 +57,7 @@ const WhatWeOffer = () => {
           >
             <Link
               href="#contact"
+              data-action="open-url-capture"
               className="bg-primary text-primary-foreground font-body font-medium py-4 px-8 flex items-center gap-2.5 hover:opacity-80 transition-opacity duration-300 whitespace-nowrap"
             >
               Try Now

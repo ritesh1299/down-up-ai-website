@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { UrlCaptureBar } from "@/components/url-capture/UrlCaptureBar";
 
 const HeroSection = () => {
   return (
@@ -68,9 +69,14 @@ const HeroSection = () => {
             </motion.div>
           </motion.h1>
 
+          {/* URL Capture Bar - Hero placement */}
+          <div className="mt-8 sm:mt-10">
+            <UrlCaptureBar variant="hero" />
+          </div>
+
           {/* Sub-content: Tagline and Buttons */}
           <motion.div
-            className="mt-16 sm:mt-24 flex flex-col md:flex-row items-center justify-between gap-8"
+            className="mt-8 sm:mt-12 flex flex-col md:flex-row items-center justify-between gap-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -87,6 +93,7 @@ const HeroSection = () => {
               >
                 <Link
                   href="#contact"
+                  data-action="open-url-capture"
                   className="bg-primary text-primary-foreground font-body font-medium py-4 px-8 flex items-center gap-2.5 hover:opacity-80 transition-opacity duration-300 ease-in-out whitespace-nowrap"
                 >
                   Try Now
