@@ -80,7 +80,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
         <div className="fixed inset-0 z-[70] grid place-items-center bg-background/80 backdrop-blur-sm">
           <div className="bg-background border border-border p-6 w-[320px] text-center">
             <p className="font-medium mb-2">Scanning your site…</p>
-            <p className="text-sm text-muted-foreground">We’ll personalize SEO + GEO insights.</p>
+            <p className="text-sm text-muted-foreground">We'll personalize SEO + GEO insights.</p>
           </div>
         </div>
       )}
@@ -114,9 +114,6 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
               <SheetTitle>Enter your website URL</SheetTitle>
               <SheetDescription>We'll scan your site to personalize SEO + GEO insights.</SheetDescription>
             </SheetHeader>
-            <button onClick={closeModal} className="absolute right-4 top-4 p-1 text-muted-foreground" aria-label="Close">
-              <X className="h-5 w-5" />
-            </button>
             <div className="mt-6">
               <UrlCaptureBar variant="modal" showHelperText />
             </div>
