@@ -9,7 +9,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-bold text-xl text-foreground hover:opacity-80 transition-opacity !whitespace-pre-line">Discovery Ai</Link>
+        <Link href="/" className="font-bold text-xl text-foreground hover:opacity-80 transition-opacity !whitespace-pre-line !whitespace-pre-line">Down Up</Link>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
