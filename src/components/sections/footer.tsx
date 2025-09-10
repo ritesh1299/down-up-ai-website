@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <p className="text-base text-muted-foreground">Email</p>
               <ul className="space-y-3">
-                <li><a href="mailto:hello@downup.ai" className="text-base text-foreground hover:text-muted-foreground transition-colors">hello@downup.ai</a></li>
+                <li><a href="mailto:hello@paralleluniverse.ai" className="text-base text-foreground hover:text-muted-foreground transition-colors">hello@paralleluniverse.ai</a></li>
               </ul>
             </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
 
           <div>
             <p className="text-sm text-muted-foreground">
-              © 2025 Down Up. All rights reserved.
+              © 2025 Parallel Universe. All rights reserved.
             </p>
           </div>
         </div>
