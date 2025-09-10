@@ -7,11 +7,11 @@ const TeamSection = () => {
   const pricingTiers = [
     {
       name: "Starter",
-      description: "Perfect for small teams beginning their discovery journey.",
+      description: "Perfect for small teams beginning their discovery journey. $49/mo",
     },
     {
       name: "Growth", 
-      description: "For growing businesses that need SEO + GEO + automated posting.",
+      description: "For growing businesses that need SEO + GEO + automated posting. $99/mo",
     },
     {
       name: "Pro",
