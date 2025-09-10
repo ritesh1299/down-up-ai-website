@@ -125,6 +125,19 @@ export default function HomePage() {
             backgroundPosition: "center",
           }}
         />
+        {/* NEW: Graphic wave (layered curved bands at bottom) */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[46vh] opacity-45 blur-md [mask-image:linear-gradient(to_top,white,transparent_80%)] animate-pulse [animation-duration:14s]"
+          style={{
+            backgroundImage:
+              "radial-gradient(150% 75% at 50% 126%, rgba(0,0,0,0.24) 0%, rgba(0,0,0,0.24) 28%, transparent 29%), radial-gradient(140% 70% at 50% 124%, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.20) 26%, transparent 27%), radial-gradient(130% 65% at 50% 122%, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.16) 24%, transparent 25%), radial-gradient(120% 60% at 50% 120%, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.14) 22%, transparent 23%), radial-gradient(110% 55% at 50% 118%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 20%, transparent 21%), conic-gradient(from_200deg_at_50%_110%, rgba(0,0,0,0.10), transparent 40%, rgba(0,0,0,0.10) 80%, transparent 100%), linear-gradient(to top, rgba(0,0,0,0.06), transparent)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%",
+            backgroundPosition: "bottom center",
+            backgroundBlendMode: "multiply",
+            WebkitMaskImage: "linear-gradient(to top, white, transparent 80%)",
+          }}
+        />
         {/* Soft glows */}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl animate-pulse [animation-duration:10s]" />
         <div className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-foreground/5 blur-3xl animate-pulse [animation-duration:12s]" />
