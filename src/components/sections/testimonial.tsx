@@ -11,7 +11,7 @@ const Testimonial = () => {
             </h2>
             <blockquote>
               <p className="font-display text-[28px] md:text-[32px] leading-[1.3] italic font-normal text-foreground mb-12">
-                "With Down Up, we saw our brand visibility skyrocket.
+                "With Parallel Universe, we saw our brand visibility skyrocket.
                 The automation felt seamless — it's like having a growth team that never sleeps."
               </p>
               <footer className="font-body text-lg text-muted-foreground">
