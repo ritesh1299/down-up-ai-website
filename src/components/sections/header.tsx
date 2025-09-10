@@ -9,8 +9,17 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-bold text-xl text-foreground hover:opacity-80 transition-opacity">
-          Parallel Universe
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Image
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757468752628-344cajhkop1.png"
+            alt="Logo"
+            width={28}
+            height={28}
+          />
+          <span className="font-bold text-xl text-foreground leading-tight">
+            <span className="block">Parallel</span>
+            <span className="block">Universe</span>
+          </span>
         </Link>
 
         {/* Navigation */}
