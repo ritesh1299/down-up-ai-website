@@ -76,7 +76,7 @@ const HeroSection = () => {
 
           {/* Sub-content: Tagline and Buttons */}
           <motion.div
-            className="mt-8 sm:mt-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            className="mt-8 sm:mt-12 flex flex-col md:flex-row items-center justify-start gap-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -85,19 +85,6 @@ const HeroSection = () => {
               <p className="font-body text-base lg:text-lg text-muted-foreground max-w-lg">
                 Your always-on AI growth partner — combining SEO, Generative Engine Optimization (GEO), and social engagement into one seamless platform.
               </p>
-            </div>
-            <div className="flex items-center gap-4 shrink-0">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="#services"
-                  className="border border-foreground text-foreground font-body font-medium py-4 px-8 hover:bg-foreground/10 transition-colors duration-300 ease-in-out whitespace-nowrap"
-                >
-                  Learn More
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
         </div>
