@@ -15,11 +15,11 @@ const Header = () => {
             alt="Logo"
             width={28}
             height={28}
-            className="brightness-0"
-          />
+            className="brightness-0" />
+
           <span className="font-bold text-xl text-foreground leading-tight">
-            <span className="block">Parallel</span>
-            <span className="block">Universe</span>
+            <span className="block !w-[99.6%] !h-5">Parallel</span>
+            <span className="block !w-full !h-[25px]">Universe</span>
           </span>
         </Link>
 
@@ -43,20 +43,20 @@ const Header = () => {
         <Link
           href="#contact"
           data-action="open-url-capture"
-          className="bg-primary text-primary-foreground font-medium py-2 px-6 flex items-center gap-2 hover:opacity-80 transition-opacity whitespace-nowrap"
-        >
+          className="bg-primary text-primary-foreground font-medium py-2 px-6 flex items-center gap-2 hover:opacity-80 transition-opacity whitespace-nowrap">
+
           Try Now
           <Image
             src="https://files.peachworlds.com/website/2fcd9ba3-fd48-49df-83ed-035950fff8e8/right-up-white.svg"
             alt="Arrow icon"
             width={16}
             height={16}
-            className="brightness-0"
-          />
+            className="brightness-0" />
+
         </Link>
       </div>
-    </header>
-  );
+    </header>);
+
 };
 
 export default Header;
