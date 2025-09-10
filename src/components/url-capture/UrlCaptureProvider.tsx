@@ -57,17 +57,13 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
       const actionable = target.closest<HTMLElement>('[data-action="open-url-capture"]');
       if (!actionable) return;
       e.preventDefault();
-      const stored = localStorage.getItem("discoveryai.siteUrl");
-      if (stored) {
-        navigateToAuth(stored);
-      } else {
-        openModal();
-      }
+      // Always open the URL capture modal from CTA clicks
+      openModal();
     };
 
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, [navigateToAuth, openModal]);
+  }, [openModal]);
 
   const value = useMemo(() => ({ open, openModal, closeModal, handleSubmit }), [open, openModal, closeModal, handleSubmit]);
 
@@ -88,7 +84,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
       {/* Desktop modal (md and up) */}
       <div className="hidden md:block">
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogContent className="max-w-[520px] p-6">
+          <DialogContent className="max-w-[680px] sm:p-8 p-6 rounded-none">
             <DialogHeader>
               <DialogTitle>Enter your website URL</DialogTitle>
               <DialogDescription>We'll scan your site to personalize SEO + GEO insights.</DialogDescription>
@@ -97,7 +93,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
               <X className="h-5 w-5" />
             </button>
             <div className="mt-4">
-              <UrlCaptureBar variant="modal" showHelperText />
+              <UrlCaptureBar variant="modal" showHelperText autoFocus />
             </div>
             <div className="mt-3">
               <button onClick={closeModal} className="text-sm text-muted-foreground hover:underline">Skip for now</button>
@@ -115,7 +111,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
               <SheetDescription>We'll scan your site to personalize SEO + GEO insights.</SheetDescription>
             </SheetHeader>
             <div className="mt-6">
-              <UrlCaptureBar variant="modal" showHelperText />
+              <UrlCaptureBar variant="modal" showHelperText autoFocus />
             </div>
             <div className="mt-4">
               <button onClick={closeModal} className="text-sm text-muted-foreground hover:underline">Skip for now</button>
