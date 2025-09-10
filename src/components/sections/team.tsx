@@ -70,7 +70,7 @@ const TeamSection = () => {
                   data-action="open-url-capture"
                   className="w-full bg-primary text-primary-foreground font-medium py-3 px-6 hover:opacity-80 transition-opacity duration-300"
                 >
-                  Try Now
+                  Contact Sales
                 </button>
               </div>
             </motion.div>
