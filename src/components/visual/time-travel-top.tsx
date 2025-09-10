@@ -19,19 +19,22 @@ export const TimeTravelTopOverlay: React.FC = () => {
   React.useEffect(() => {
     const id = setInterval(() => {
       setEra((prev) => ((prev + 1) as Era) % ERAS.length);
-    }, 5000); // 5s per era
+    }, 3000); // 3s per era (faster cycle)
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 h-[60vh] [mask-image:linear-gradient(to_bottom,white,transparent_85%)]">
+    <div
+      className="pointer-events-none absolute inset-x-0 top-0 h-[60vh] z-[999] [mask-image:linear-gradient(to_bottom,white,transparent_85%)]"
+      style={{ WebkitMaskImage: "linear-gradient(to bottom, white, transparent 85%)" }}
+    >
       {/* Base container for stacked eras */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Ancient Rome */}
         <div
           className={[
             "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            era === 0 ? "opacity-35" : "opacity-0",
+            era === 0 ? "opacity-90" : "opacity-0",
           ].join(" ")}
           style={{
             // Roman numerals + chiseled stone grain
@@ -61,7 +64,7 @@ export const TimeTravelTopOverlay: React.FC = () => {
         <div
           className={[
             "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            era === 1 ? "opacity-35" : "opacity-0",
+            era === 1 ? "opacity-90" : "opacity-0",
           ].join(" ")}
           style={{
             // Paper texture + gear-like conic arcs
@@ -86,7 +89,7 @@ export const TimeTravelTopOverlay: React.FC = () => {
         <div
           className={[
             "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            era === 2 ? "opacity-35" : "opacity-0",
+            era === 2 ? "opacity-90" : "opacity-0",
           ].join(" ")}
           style={{
             backgroundImage: [
@@ -104,7 +107,7 @@ export const TimeTravelTopOverlay: React.FC = () => {
         <div
           className={[
             "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            era === 3 ? "opacity-35" : "opacity-0",
+            era === 3 ? "opacity-90" : "opacity-0",
           ].join(" ")}
           style={{
             backgroundImage: [

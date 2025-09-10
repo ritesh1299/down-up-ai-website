@@ -54,7 +54,7 @@ export const UniverseParallax: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="pointer-events-none absolute inset-0 will-change-transform"
+      className="pointer-events-none absolute inset-0 will-change-transform z-10"
       style={{
         // Translate in px using CSS vars updated by JS
         transform: "translate3d(var(--mx, 0px) , var(--my, 0px), 0)",
