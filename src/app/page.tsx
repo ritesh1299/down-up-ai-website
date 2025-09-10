@@ -87,16 +87,8 @@ export default function HomePage() {
             </animateMotion>
           </circle>
         </svg>
-        {/* Attached graphic at the top (smooth, subtle) */}
-        <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757490020795-ektexiqzrcf.jpg"
-          alt="Wireframe globe network graphic"
-          width={1200}
-          height={540}
-          priority
-          unoptimized
-          className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[92vw] max-w-[1280px] h-auto opacity-95 [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
-        />
+        {/* Attached graphic at the top (moved to foreground) */}
+        {/* Removed here to avoid being hidden by later layers */}
         {/* Warm cloud tint on right for photo-like look */}
         <div
           className="absolute bottom-0 right-0 h-[60vh] w-full pointer-events-none bg-gradient-to-t from-amber-300/40 via-amber-200/25 to-transparent"
@@ -117,6 +109,16 @@ export default function HomePage() {
       </div>
       {/* Foreground content */}
       <div className="relative z-10">
+        {/* Attached graphic at the top now rendered above overlays */}
+        <Image
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757490020795-ektexiqzrcf.jpg"
+          alt="Wireframe globe network graphic"
+          width={1200}
+          height={540}
+          priority
+          unoptimized
+          className="pointer-events-none fixed left-1/2 -translate-x-1/2 top-0 w-screen max-w-none h-auto opacity-100 z-[2000] [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
+        />
         <Header />
         <HeroSection />
         <ExecutiveSearch />
