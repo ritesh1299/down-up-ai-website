@@ -15,6 +15,7 @@ const Header = () => {
             alt="Logo"
             width={28}
             height={28}
+            className="brightness-0"
           />
           <span className="font-bold text-xl text-foreground leading-tight">
             <span className="block">Parallel</span>
