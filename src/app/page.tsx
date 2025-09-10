@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen relative overflow-hidden bg-gradient-to-b from-white via-white to-muted/60">
       {/* Decorative background layers */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 motion-reduce:opacity-0">
         {/* Subtle grid */}
         <div
           className="absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)] animate-pulse [animation-duration:5s]"
@@ -63,15 +63,6 @@ export default function HomePage() {
         />
         {/* Planet arcs (subtle repeating conic rings) */}
         <div className="absolute inset-0 opacity-15 blur-md [mask-image:radial-gradient(circle_at_center,white,transparent_62%)] [background:repeating-conic-gradient(from_0deg,rgba(0,0,0,0.06)_0deg,rgba(0,0,0,0.06)_6deg,transparent_6deg,transparent_18deg)] animate-spin [animation-duration:115s] [animation-direction:reverse]" />
-        {/* Comet streaks (thin diagonal lines orbiting) */}
-        <div
-          className="absolute inset-0 opacity-12 blur-sm [mask-image:radial-gradient(ellipse_at_center,white,transparent_72%)] mix-blend-multiply animate-spin [animation-duration:70s] [animation-timing-function:linear]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(60deg, rgba(0,0,0,0.10) 0px, rgba(0,0,0,0.10) 1px, transparent 1px, transparent 10px)",
-            backgroundSize: "auto",
-          }}
-        />
         {/* NEW: Twinkling stars (blinking specks) */}
         <div
           className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent_72%)] animate-pulse [animation-duration:3.5s]"
@@ -134,8 +125,6 @@ export default function HomePage() {
             backgroundPosition: "center",
           }}
         />
-        {/* Diagonal stripes */}
-        <div className="absolute inset-0 opacity-25 mix-blend-multiply [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)] [background-image:repeating-linear-gradient(45deg,rgba(0,0,0,0.06)_0px,rgba(0,0,0,0.06)_2px,transparent_2px,transparent_12px)] animate-pulse [animation-duration:7s]" />
         {/* Soft glows */}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl animate-pulse [animation-duration:5s]" />
         <div className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-foreground/5 blur-3xl animate-pulse [animation-duration:6s]" />
@@ -143,45 +132,6 @@ export default function HomePage() {
         <div className="absolute top-1/3 -right-24 h-[22rem] w-[22rem] rounded-full bg-gradient-to-br from-primary/10 to-foreground/5 blur-3xl animate-pulse [animation-duration:6s]" />
         <div className="absolute bottom-10 left-1/4 h-72 w-72 rounded-full bg-gradient-to-tr from-foreground/10 to-primary/5 blur-3xl animate-pulse [animation-duration:6s]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[34rem] w-[34rem] rounded-full bg-gradient-to-b from-primary/5 to-transparent blur-[100px] opacity-80 animate-pulse [animation-duration:9s]" />
-        {/* Grain flicker for life */}
-        <div className="absolute inset-0 opacity-10 mix-blend-multiply [mask-image:radial-gradient(ellipse_at_center,white,transparent_75%)] animate-pulse [animation-duration:4s]" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"2\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23n)\" opacity=\"0.35\"/></svg>')", backgroundSize: "200px 200px" }} />
-        {/* Top-only enhanced accents */}
-        <div className="absolute inset-x-0 top-0 h-[60vh] pointer-events-none [mask-image:linear-gradient(to_bottom,white,transparent_85%)]">
-          {/* Aurora sweep (top vignette) */}
-          <div
-            className="absolute inset-0 blur-3xl opacity-30 animate-spin [animation-duration:55s]"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.22) 50%, rgba(0,0,0,0.18) 60%, transparent 100%)",
-            }}
-          />
-          {/* Conic highlight ring (top) */}
-          <div className="absolute inset-0 blur-xl opacity-25 [background:conic-gradient(from_220deg_at_50%_25%,rgba(0,0,0,0.18),transparent_45%,rgba(0,0,0,0.18)_70%,transparent_100%)] animate-spin [animation-duration:75s] [animation-direction:reverse]" />
-          {/* Top shimmer sweep */}
-          <div
-            className="absolute inset-0 opacity-20 blur-md origin-top animate-spin [animation-duration:45s]"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(75deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 14px)",
-            }}
-          />
-          {/* Top focal glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[28rem] w-[60rem] rounded-full opacity-30 blur-[80px] animate-pulse [animation-duration:6s] bg-gradient-to-b from-foreground/20 to-transparent" />
-          {/* Top micro-stars twinkle */}
-          <div
-            className="absolute inset-x-0 top-0 h-full opacity-30 animate-pulse [animation-duration:2.8s]"
-            style={{
-              backgroundImage:
-                "radial-gradient(rgba(0,0,0,0.18) 0.6px, transparent 0.6px), radial-gradient(rgba(0,0,0,0.12) 0.4px, transparent 0.4px)",
-              backgroundSize: "16px 16px, 24px 24px",
-              backgroundPosition: "4px 2px, 0 0",
-            }}
-          />
-          {/* Top scanline sweep */}
-          <div
-            className="absolute inset-x-0 top-0 h-full opacity-15 blur-[2px] origin-[50%_0%] [background:repeating-linear-gradient(0deg,rgba(0,0,0,0.10)_0px,rgba(0,0,0,0.10)_1px,transparent_1px,transparent_8px)] animate-spin [animation-duration:50s]"
-          />
-        </div>
         {/* Time-travel era overlay (top-only) */}
         <TimeTravelTopOverlay />
         {/* Mouse parallax overlay on top */}
