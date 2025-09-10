@@ -25,7 +25,7 @@ const ExecutiveSearch = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Down Up analyzes your content, discovers keywords, and engages audiences with posts, comments, and reels.
+            Parallel Universe analyzes your content, discovers keywords, and engages audiences with posts, comments, and reels.
             <br />
             Through SEO + GEO (Generative Engine Optimization), we ensure your brand becomes discoverable — automatically.
           </motion.p>
