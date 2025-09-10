@@ -89,8 +89,8 @@ export default function HomePage() {
         </svg>
         {/* Attached graphic at the top (smooth, subtle) */}
         <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757489479168-xys15t72t1s.png"
-          alt="Scenic landscape graphic"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757490020795-ektexiqzrcf.jpg"
+          alt="Wireframe globe network graphic"
           width={1200}
           height={540}
           priority
