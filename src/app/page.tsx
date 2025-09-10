@@ -46,6 +46,46 @@ export default function HomePage() {
             backgroundPosition: "0 0, 12px 8px",
           }}
         />
+        {/* Journey path with moving glow dot */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="journeyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.35" />
+              <stop offset="50%" stopColor="#c4b5fd" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#fde68a" stopOpacity="0.35" />
+            </linearGradient>
+            <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <path id="journeyPath" d="M-50,780 C180,720 260,520 420,520 C620,520 620,760 800,760 C980,760 1040,560 1180,520 C1320,480 1460,620 1490,660" />
+          </defs>
+          {/* Soft glowing trail */}
+          <use href="#journeyPath" stroke="url(#journeyGrad)" strokeWidth="3" fill="none" filter="url(#softGlow)" opacity="0.6" />
+          {/* Fine path with draw-on animation */}
+          <use href="#journeyPath" stroke="#ffffff" strokeOpacity="0.35" strokeWidth="1.2" fill="none" strokeDasharray="8 10">
+            <animate attributeName="stroke-dashoffset" from="200" to="0" dur="18s" repeatCount="indefinite" />
+          </use>
+          {/* Moving nodes (multiple for a calm journey feel) */}
+          <circle r="5" fill="#ffffff" filter="url(#softGlow)">
+            <animateMotion dur="28s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#journeyPath" />
+            </animateMotion>
+          </circle>
+          <circle r="3.5" fill="#c4b5fd" opacity="0.9" filter="url(#softGlow)">
+            <animateMotion dur="36s" begin="4s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#journeyPath" />
+            </animateMotion>
+          </circle>
+          <circle r="4" fill="#fde68a" opacity="0.9" filter="url(#softGlow)">
+            <animateMotion dur="42s" begin="10s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#journeyPath" />
+            </animateMotion>
+          </circle>
+        </svg>
         {/* Warm cloud tint on right for photo-like look */}
         <div
           className="absolute bottom-0 right-0 h-[60vh] w-full pointer-events-none bg-gradient-to-t from-amber-300/40 via-amber-200/25 to-transparent"
