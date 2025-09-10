@@ -9,6 +9,7 @@ import ProvenSuccess from "@/components/sections/proven-success";
 import UnlockPotentialSection from "@/components/sections/unlock-potential";
 import Footer from "@/components/sections/footer";
 import UniverseParallax from "@/components/visual/universe-parallax";
+import TimeTravelTopOverlay from "@/components/visual/time-travel-top";
 
 export default function HomePage() {
   return (
@@ -181,6 +182,8 @@ export default function HomePage() {
             className="absolute inset-x-0 top-0 h-full opacity-15 blur-[2px] origin-[50%_0%] [background:repeating-linear-gradient(0deg,rgba(0,0,0,0.10)_0px,rgba(0,0,0,0.10)_1px,transparent_1px,transparent_8px)] animate-spin [animation-duration:50s]"
           />
         </div>
+        {/* Time-travel era overlay (top-only) */}
+        <TimeTravelTopOverlay />
         {/* Mouse parallax overlay on top */}
         <UniverseParallax />
       </div>
