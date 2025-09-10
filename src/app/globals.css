@@ -1,3 +1,4 @@
+/* Updated: 2025-09-10T06:47:43.100838 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
@@ -84,6 +85,17 @@
   --font-display: "Poppins", sans-serif;
   --font-body: "Poppins", sans-serif;
   --font-mono: "Space Mono", monospace;
+
+  /* Smooth top graphic animations */
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(10px) scale(1.01); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
 /*

@@ -8,6 +8,7 @@ import Testimonial from "@/components/sections/testimonial";
 import ProvenSuccess from "@/components/sections/proven-success";
 import UnlockPotentialSection from "@/components/sections/unlock-potential";
 import Footer from "@/components/sections/footer";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -86,6 +87,16 @@ export default function HomePage() {
             </animateMotion>
           </circle>
         </svg>
+        {/* Attached graphic at the top (smooth, subtle) */}
+        <Image
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757488366071-ncmzg33r6ts.gif"
+          alt="Top graphic"
+          width={560}
+          height={560}
+          priority
+          unoptimized
+          className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[68vw] max-w-[560px] h-auto opacity-90 [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
+        />
         {/* Warm cloud tint on right for photo-like look */}
         <div
           className="absolute bottom-0 right-0 h-[60vh] w-full pointer-events-none bg-gradient-to-t from-amber-300/40 via-amber-200/25 to-transparent"
