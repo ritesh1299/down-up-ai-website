@@ -26,6 +26,23 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [isScanning, setIsScanning] = useState(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 768px)");
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      // @ts-expect-error handle both event and list
+      setIsDesktop((e.matches ?? e.currentTarget?.matches) ?? mql.matches);
+    };
+    // init
+    setIsDesktop(mql.matches);
+    // listen
+    const listener = (e: MediaQueryListEvent) => onChange(e);
+    mql.addEventListener ? mql.addEventListener("change", listener) : mql.addListener(listener);
+    return () => {
+      mql.removeEventListener ? mql.removeEventListener("change", listener) : mql.removeListener(listener);
+    };
+  }, []);
 
   const closeModal = useCallback(() => setOpen(false), []);
   const openModal = useCallback(() => setOpen(true), []);
@@ -81,8 +98,8 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
         </div>
       )}
 
-      {/* Desktop modal (md and up) */}
-      <div className="hidden md:block">
+      {/* Single portal based on viewport */}
+      {isDesktop ? (
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogContent className="max-w-[680px] sm:p-8 p-6 rounded-none">
             <DialogHeader>
@@ -100,10 +117,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
             </div>
           </DialogContent>
         </Dialog>
-      </div>
-
-      {/* Mobile full-screen sheet */}
-      <div className="md:hidden">
+      ) : (
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetContent side="bottom" className="h-[100vh] p-6 overflow-auto">
             <SheetHeader>
@@ -118,7 +132,7 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
             </div>
           </SheetContent>
         </Sheet>
-      </div>
+      )}
     </UrlCaptureContext.Provider>
   );
 };
