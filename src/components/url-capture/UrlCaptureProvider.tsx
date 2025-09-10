@@ -106,9 +106,6 @@ export const UrlCaptureProvider = ({ children }: { children: React.ReactNode }) 
               <DialogTitle>Enter your website URL</DialogTitle>
               <DialogDescription>We'll scan your site to personalize SEO + GEO insights.</DialogDescription>
             </DialogHeader>
-            <button onClick={closeModal} className="absolute right-4 top-4 p-1 text-muted-foreground hover:text-foreground" aria-label="Close">
-              <X className="h-5 w-5" />
-            </button>
             <div className="mt-4">
               <UrlCaptureBar variant="modal" showHelperText autoFocus />
             </div>
