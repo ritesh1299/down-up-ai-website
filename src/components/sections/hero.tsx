@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { UrlCaptureBar } from "@/components/url-capture/UrlCaptureBar";
@@ -14,33 +12,33 @@ const HeroSection = () => {
   const y = useTransform(scrollYProgress, [0, 0.2], prefersReduced ? [0, 0] : [0, 8]);
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen text-foreground overflow-hidden bg-background">
+    <section className="relative flex items-center justify-center min-h-screen text-foreground overflow-hidden bg-[#F6F7F9]">
       <video
         src="https://files.peachworlds.com/website/ab033b05-2b48-4734-8fc1-df72206b59f9/abstrac-fractal-alpha.mp4"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-20" 
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-0" 
       />
 
       {/* Dotted hemisphere globe background */}
       <motion.div
         style={{ y }}
         aria-hidden
-        className="pointer-events-none absolute left-1/2 bottom-[-8%] -translate-x-1/2 z-0 will-change-transform motion-reduce:transform-none animate-[driftXY_24s_ease-in-out_infinite_alternate] motion-reduce:animate-none"
+        className="pointer-events-none absolute left-1/2 bottom-0 z-10 will-change-transform motion-reduce:transform-none"
       >
-        <BGGlobeDots
-          variant="hero"
-          className="w-[1400px] max-w-[140%] opacity-[0.05] md:opacity-[0.08]"
-          // show only top third via natural clipping of ellipse mask inside
-        />
+        <div className="-translate-x-1/2 animate-[driftXY_24s_ease-in-out_infinite_alternate] motion-reduce:animate-none">
+          <BGGlobeDots
+            variant="hero"
+            className="w-[1400px] max-w-[180%] opacity-[0.28] md:opacity-[0.24]"
+            // show only top third via natural clipping of ellipse mask inside
+          />
+        </div>
       </motion.div>
 
-      <div className="absolute inset-0 bg-background/90 z-10" />
-
       {/* Dynamic floating elements */}
-      <div className="absolute inset-0 z-15 pointer-events-none">
+      <div className="absolute inset-0 z-[15] pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}

@@ -44,12 +44,13 @@ export const BGGlobeDots: React.FC<GlobeDotsProps> = ({
         </symbol>
         
         <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-          <stop offset="45%" stopColor="#ffffff" stopOpacity="0.3" />
+          {/* Soften fade to avoid erasing dots entirely at the top */}
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05" />
+          <stop offset="60%" stopColor="#ffffff" stopOpacity="0.7" />
           <stop offset="100%" stopColor="#ffffff" stopOpacity="1" />
         </linearGradient>
         
-        <mask id="maskFade">
+        <mask id="maskFade" maskUnits="userSpaceOnUse">
           <rect x="0" y="0" width={vw} height={vh} fill="url(#fadeTop)" />
         </mask>
         
@@ -58,7 +59,7 @@ export const BGGlobeDots: React.FC<GlobeDotsProps> = ({
         </clipPath>
       </defs>
 
-      <g clipPath="url(#hemisphere)" mask="url(#maskFade)">
+      <g clipPath="url(#hemisphere)">
         {Array.from({ length: 12 }, (_, bandIndex) => {
           const y = vh - bandIndex * 35 - 40;
           const spread = vw * (0.2 + bandIndex * 0.07);
