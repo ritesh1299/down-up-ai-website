@@ -45,7 +45,7 @@ const WhatWeOffer = () => {
             <br />
             From SEO and GEO to automated posting and engagement —
             <br />
-            Down Up ensures your brand stays visible, relevant, and connected.
+            Parallel Universe ensures your brand stays visible, relevant, and connected.
           </motion.p>
 
           <motion.div
