@@ -47,34 +47,43 @@ const TeamSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pricingTiers.map((tier, index) => (
-            <motion.div
-              key={index}
-              className="bg-muted/5 border border-border p-8 hover:bg-muted/10 transition-colors duration-300 group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="space-y-6">
-                <h3 className="font-display font-bold text-2xl text-foreground">
-                  {tier.name}
-                </h3>
-                
-                <p className="font-body text-muted-foreground leading-relaxed">
-                  {tier.description}
-                </p>
-                
-                <button
-                  type="button"
-                  data-action="open-url-capture"
-                  className="w-full bg-primary text-primary-foreground font-medium py-3 px-6 hover:opacity-80 transition-opacity duration-300"
-                >
-                  {tier.name === "Pro" ? "Contact Sales" : "Try Now"}
-                </button>
-              </div>
-            </motion.div>
-          ))}
+          {pricingTiers.map((tier, index) => {
+            const priceMatch = tier.description.match(/\$\d+\/mo/);
+            const descText = tier.description.replace(/\s*\$\d+\/mo/, "");
+            return (
+              <motion.div
+                key={index}
+                className="bg-muted/5 border border-border p-8 hover:bg-muted/10 transition-colors duration-300 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="space-y-6">
+                  <h3 className="font-display font-bold text-2xl text-foreground">
+                    {tier.name}
+                  </h3>
+                  
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                    {descText.trim()}
+                  </p>
+                  {priceMatch && (
+                    <p className="font-display font-bold text-foreground">
+                      {priceMatch[0]}
+                    </p>
+                  )}
+                  
+                  <button
+                    type="button"
+                    data-action="open-url-capture"
+                    className="w-full bg-primary text-primary-foreground font-medium py-3 px-6 hover:opacity-80 transition-opacity duration-300"
+                  >
+                    {tier.name === "Pro" ? "Contact Sales" : "Try Now"}
+                  </button>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
