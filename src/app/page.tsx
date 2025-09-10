@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen relative bg-gradient-to-b from-[#0b1630] via-[#0d1f45] to-[#0a1430]">
       {/* Decorative background layers */}
-      <div className="pointer-events-none fixed inset-0 transform-gpu z-20">
+      <div className="pointer-events-none fixed inset-0 transform-gpu z-0">
         {/* Subtle grid */}
         <div className="hidden" />
         {/* Conic ring accent */}
@@ -95,7 +95,7 @@ export default function HomePage() {
           height={560}
           priority
           unoptimized
-          className="absolute z-30 left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[68vw] max-w-[560px] h-auto [filter:saturate(1.05)_contrast(1.05)] [will-change:opacity,transform] drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] animate-[breathe_4s_ease-in-out_infinite] motion-safe:animate-[float_22s_ease-in-out_infinite,breathe_4s_ease-in-out_infinite]"
+          className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[68vw] max-w-[560px] h-auto opacity-90 [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
         />
         {/* Warm cloud tint on right for photo-like look */}
         <div

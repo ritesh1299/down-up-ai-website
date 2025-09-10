@@ -19,7 +19,7 @@ const Header = () => {
 
           <span className="font-bold text-xl text-foreground leading-tight">
             <span className="block !w-[99.6%] !h-5">Parallel</span>
-            <span className="block !w-full !h-[25px]">Universe</span>
+            <span className="block !w-full !h-[23px]">Universe</span>
           </span>
         </Link>
 
