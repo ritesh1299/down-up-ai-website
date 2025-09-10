@@ -96,6 +96,18 @@
     from { opacity: 0; transform: translateY(-4px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Dotted globe animations */
+  @keyframes driftXY {
+    0% { transform: translate3d(-50%, 2px, 0); }
+    50% { transform: translate3d(calc(-50% + 12px), -6px, 0); }
+    100% { transform: translate3d(calc(-50% - 12px), 4px, 0); }
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.96; }
+    50% { opacity: 1; }
+    100% { opacity: 0.97; }
+  }
 }
 
 /*

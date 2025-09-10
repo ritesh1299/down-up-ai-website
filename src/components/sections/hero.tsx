@@ -3,10 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { UrlCaptureBar } from "@/components/url-capture/UrlCaptureBar";
+import { BGGlobeDots } from "@/components/visual/BGGlobeDots";
 
 const HeroSection = () => {
+  // parallax for globe
+  const prefersReduced = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 0.2], prefersReduced ? [0, 0] : [0, 8]);
+
   return (
     <section className="relative flex items-center justify-center min-h-screen text-foreground overflow-hidden bg-background">
       <video
@@ -18,7 +24,20 @@ const HeroSection = () => {
         className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-20" 
       />
 
-      <div className="absolute inset-0 bg-background/30 z-10" />
+      {/* Dotted hemisphere globe background */}
+      <motion.div
+        style={{ y }}
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 bottom-[-8%] -translate-x-1/2 z-0 will-change-transform motion-reduce:transform-none animate-[driftXY_24s_ease-in-out_infinite_alternate] motion-reduce:animate-none"
+      >
+        <BGGlobeDots
+          variant="hero"
+          className="w-[1400px] max-w-[140%] opacity-[0.05] md:opacity-[0.08]"
+          // show only top third via natural clipping of ellipse mask inside
+        />
+      </motion.div>
+
+      <div className="absolute inset-0 bg-background/90 z-10" />
 
       {/* Dynamic floating elements */}
       <div className="absolute inset-0 z-15 pointer-events-none">
