@@ -144,6 +144,43 @@ export default function HomePage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[34rem] w-[34rem] rounded-full bg-gradient-to-b from-primary/5 to-transparent blur-[100px] opacity-80 animate-pulse [animation-duration:9s]" />
         {/* Grain flicker for life */}
         <div className="absolute inset-0 opacity-10 mix-blend-multiply [mask-image:radial-gradient(ellipse_at_center,white,transparent_75%)] animate-pulse [animation-duration:4s]" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"2\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23n)\" opacity=\"0.35\"/></svg>')", backgroundSize: "200px 200px" }} />
+        {/* Top-only enhanced accents */}
+        <div className="absolute inset-x-0 top-0 h-[60vh] pointer-events-none [mask-image:linear-gradient(to_bottom,white,transparent_85%)]">
+          {/* Aurora sweep (top vignette) */}
+          <div
+            className="absolute inset-0 blur-3xl opacity-30 animate-spin [animation-duration:55s]"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.22) 50%, rgba(0,0,0,0.18) 60%, transparent 100%)",
+            }}
+          />
+          {/* Conic highlight ring (top) */}
+          <div className="absolute inset-0 blur-xl opacity-25 [background:conic-gradient(from_220deg_at_50%_25%,rgba(0,0,0,0.18),transparent_45%,rgba(0,0,0,0.18)_70%,transparent_100%)] animate-spin [animation-duration:75s] [animation-direction:reverse]" />
+          {/* Top shimmer sweep */}
+          <div
+            className="absolute inset-0 opacity-20 blur-md origin-top animate-spin [animation-duration:45s]"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(75deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 14px)",
+            }}
+          />
+          {/* Top focal glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[28rem] w-[60rem] rounded-full opacity-30 blur-[80px] animate-pulse [animation-duration:6s] bg-gradient-to-b from-foreground/20 to-transparent" />
+          {/* Top micro-stars twinkle */}
+          <div
+            className="absolute inset-x-0 top-0 h-full opacity-30 animate-pulse [animation-duration:2.8s]"
+            style={{
+              backgroundImage:
+                "radial-gradient(rgba(0,0,0,0.18) 0.6px, transparent 0.6px), radial-gradient(rgba(0,0,0,0.12) 0.4px, transparent 0.4px)",
+              backgroundSize: "16px 16px, 24px 24px",
+              backgroundPosition: "4px 2px, 0 0",
+            }}
+          />
+          {/* Top scanline sweep */}
+          <div
+            className="absolute inset-x-0 top-0 h-full opacity-15 blur-[2px] origin-[50%_0%] [background:repeating-linear-gradient(0deg,rgba(0,0,0,0.10)_0px,rgba(0,0,0,0.10)_1px,transparent_1px,transparent_8px)] animate-spin [animation-duration:50s]"
+          />
+        </div>
         {/* Mouse parallax overlay on top */}
         <UniverseParallax />
       </div>
