@@ -92,25 +92,6 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="#contact"
-                  data-action="open-url-capture"
-                  className="bg-primary text-primary-foreground font-body font-medium py-4 px-8 flex items-center gap-2.5 hover:opacity-80 transition-opacity duration-300 ease-in-out whitespace-nowrap"
-                >
-                  Try Now
-                  <Image
-                    src="https://files.peachworlds.com/website/2fcd9ba3-fd48-49df-83ed-035950fff8e8/right-up-white.svg"
-                    alt="Arrow icon"
-                    width={16}
-                    height={16}
-                    className="brightness-0"
-                  />
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
                   href="#services"
                   className="border border-foreground text-foreground font-body font-medium py-4 px-8 hover:bg-foreground/10 transition-colors duration-300 ease-in-out whitespace-nowrap"
                 >
