@@ -89,13 +89,13 @@ export default function HomePage() {
         </svg>
         {/* Attached graphic at the top (smooth, subtle) */}
         <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757488366071-ncmzg33r6ts.gif"
-          alt="Top graphic"
-          width={560}
-          height={560}
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/1757489479168-xys15t72t1s.png"
+          alt="Scenic landscape graphic"
+          width={1200}
+          height={540}
           priority
           unoptimized
-          className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[68vw] max-w-[560px] h-auto opacity-90 [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
+          className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-10 w-[92vw] max-w-[1280px] h-auto opacity-95 [filter:saturate(1.05)_contrast(1.05)] drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)] animate-[fadeIn_1200ms_ease-out_1_both] motion-safe:animate-[float_22s_ease-in-out_infinite]"
         />
         {/* Warm cloud tint on right for photo-like look */}
         <div
