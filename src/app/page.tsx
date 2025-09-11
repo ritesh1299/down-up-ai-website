@@ -14,6 +14,12 @@ export default function HomePage() {
     <main className="min-h-screen relative bg-black">
       {/* Decorative background layers */}
       <div className="pointer-events-none fixed inset-0 z-0">
+        {/* Yin-Yang split circle background */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-10 sm:top-14 md:top-16 w-[520px] sm:w-[640px] md:w-[760px] aspect-square rounded-full opacity-20"
+          style={{ background: "conic-gradient(#ffffff 0 180deg, #000000 180deg)" }}
+          aria-hidden="true"
+        />
         {/* Wireframe globe background */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 sm:top-2 md:top-4 w-[1200px] max-w-[95vw] h-[240px] sm:h-[340px] md:h-[420px] opacity-25 animate-[float_24s_ease-in-out_infinite] motion-reduce:animate-none">
           <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" className="w-full h-full animate-[fadeIn_800ms_ease-out_1_both]" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
