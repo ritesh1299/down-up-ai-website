@@ -20,6 +20,60 @@ export default function HomePage() {
           style={{ background: "conic-gradient(#ffffff 0 180deg, #000000 180deg)" }}
           aria-hidden="true"
         />
+
+        {/* Subtle animated doodle elements */}
+        <div className="absolute inset-0 opacity-10" aria-hidden>
+          {/* squiggle */}
+          <svg
+            width="120"
+            height="40"
+            viewBox="0 0 120 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute animate-[float_22s_ease-in-out_infinite] motion-reduce:animate-none"
+            style={{ top: "16%", left: "6%" }}
+          >
+            <path d="M2 20c8-14 24-14 32 0s24 14 32 0 24-14 32 0 16 14 20 10" stroke="#fff" strokeOpacity="0.9" strokeWidth="1.2" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
+          </svg>
+          {/* plus */}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute animate-[float_26s_ease-in-out_infinite] motion-reduce:animate-none"
+            style={{ top: "34%", right: "10%" }}
+          >
+            <path d="M12 4v16M4 12h16" stroke="#fff" strokeOpacity="0.9" strokeWidth="1.2" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
+          </svg>
+          {/* ring */}
+          <svg
+            width="56"
+            height="56"
+            viewBox="0 0 56 56"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute animate-[float_28s_ease-in-out_infinite] motion-reduce:animate-none"
+            style={{ bottom: "22%", left: "14%" }}
+          >
+            <circle cx="28" cy="28" r="18" stroke="#fff" strokeOpacity="0.9" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
+            <circle cx="28" cy="28" r="8" stroke="#fff" strokeOpacity="0.6" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          </svg>
+          {/* triangle */}
+          <svg
+            width="54"
+            height="54"
+            viewBox="0 0 54 54"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute animate-[float_24s_ease-in-out_infinite] motion-reduce:animate-none"
+            style={{ bottom: "12%", right: "18%" }}
+          >
+            <path d="M27 8l18 32H9L27 8Z" stroke="#fff" strokeOpacity="0.9" strokeWidth="1.2" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+          </svg>
+        </div>
+
         {/* Wireframe globe background */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 sm:top-2 md:top-4 w-[1200px] max-w-[95vw] h-[240px] sm:h-[340px] md:h-[420px] opacity-25 animate-[float_24s_ease-in-out_infinite] motion-reduce:animate-none">
           <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" className="w-full h-full animate-[fadeIn_800ms_ease-out_1_both]" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
